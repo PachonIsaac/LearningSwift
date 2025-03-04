@@ -8,10 +8,13 @@
 import SwiftUI
 
 @main
-struct LearningApp: App {
+struct KDSApp: App {
+    @StateObject private var authViewModel = AuthViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            InitView()
+            WelcomeView()
+                .environmentObject(authViewModel)
         }
     }
 }
