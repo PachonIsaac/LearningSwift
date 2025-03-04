@@ -8,13 +8,17 @@
 import SwiftUI
 
 class AuthViewModel: ObservableObject {
-    @Published var navigationPath: [AppRoute] = []
+    @Published var username: String = ""
+    @Published var password: String = ""
+    @Published var errorMessage: String? = nil
     
-    func goToLogin() {
-        navigationPath.append(.login)
+    
+    func login() {
+        if username == "admin" && password == "admin" {
+            errorMessage = nil
+        } else {
+            errorMessage = "Wrong Credentials"
+        }
     }
     
-    func goToSignUp() {
-        navigationPath.append(.signUp)
-    }
 }

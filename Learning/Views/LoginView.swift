@@ -8,12 +8,27 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         VStack {
-            Text("Login Screen")
+            NavbarView()
+            Spacer()
+            Text("Welcome")
+                .bold()
+                .font(.title)
+            
+            Text("Username")
+            TextField("Username", text: $viewModel.username)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            
+            
         }
-        .navigationTitle("Login")
+        .navigationBarBackButtonHidden(true)
     }
+        
 }
 
 #Preview {

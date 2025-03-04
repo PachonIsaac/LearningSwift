@@ -11,7 +11,7 @@ struct WelcomeView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
-        NavigationStack(path: $viewModel.navigationPath) {
+        NavigationStack{
             VStack {
                 Spacer()
                 Image(.logoKDS)
@@ -21,46 +21,38 @@ struct WelcomeView: View {
                 
                 Spacer()
                 
-                Button("Login") {
-                    viewModel.goToLogin()
-                }
-                .bold()
-                .frame(width: 150, height: 10)
+                NavigationLink(destination: LoginView()){
+                    Text("Login")
+                        .bold()
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(.white)
+                        .foregroundColor(.black)
+                        .cornerRadius(24)
+                        .shadow(radius: 16)
+                }.padding(8)
+                
+                NavigationLink(destination: SignUpView()){
+                    Text("Sign Up")
+                        .bold()
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(.white)
+                        .foregroundColor(.black)
+                        .cornerRadius(24)
+                        .shadow(radius: 16)
+                }.padding(8)
+                
+            } .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding()
-                .foregroundColor(.black)
-                .background(.white)
-                .cornerRadius(10)
-                .shadow(radius: 15, y: 5)
-                
-                Button("Sign Up") {
-                    viewModel.goToSignUp()
-                }
-                .bold()
-                .frame(width: 150, height: 10)
-                .padding()
-                .foregroundColor(.black)
-                .background(.white)
-                .cornerRadius(10)
-                .shadow(radius: 15, y: 5)
-                
-            }
-            .navigationDestination(for: AppRoute.self) { route in
-                switch route{
-                case .login:
-                    LoginView()
-                case .signUp:
-                    SignUpView()
-                }
-                
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding()
-            .background(.baseYellow)
+                .background(.baseYellow)
+            
         }
-        
     }
     
 }
+
+
 
 #Preview {
     WelcomeView()
