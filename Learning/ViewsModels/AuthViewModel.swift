@@ -8,14 +8,13 @@
 import SwiftUI
 
 class AuthViewModel: ObservableObject {
-    @Published var username: String = ""
-    @Published var password: String = ""
+    @Published var isAuthenticated = false
     @Published var errorMessage: String? = nil
     
     
-    func login() {
-        if username == "admin" && password == "admin" {
-            errorMessage = nil
+    func login(username: String, password: String) {
+        if username == "admin" && password == "admin"{
+            isAuthenticated = true
         } else {
             errorMessage = "Wrong Credentials"
         }
