@@ -1,4 +1,6 @@
 Config/
+Config/Configuration.swift
+Config/Config.xcconfig
 
 ### macOS ###
 # General
