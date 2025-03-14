@@ -21,7 +21,9 @@ struct WelcomeView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: LoginView()){
+                NavigationLink(destination: LoginView()
+                    .navigationBarBackButtonHidden(true)
+                ){
                     Text("Login")
                         .bold()
                         .frame(maxWidth: .infinity)
@@ -32,7 +34,9 @@ struct WelcomeView: View {
                         .shadow(radius: 16)
                 }.padding(8)
                 
-                NavigationLink(destination: SignUpView()){
+                NavigationLink(destination: SignUpView()
+                    .navigationBarBackButtonHidden(true)
+                ){
                     Text("Sign Up")
                         .bold()
                         .frame(maxWidth: .infinity)
@@ -48,10 +52,7 @@ struct WelcomeView: View {
                 .background(.baseYellow)
         }
     }
-    
 }
-
-
 
 #Preview {
     WelcomeView()

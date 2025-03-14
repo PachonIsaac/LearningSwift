@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CredentialsApp {
+struct CredentialsSupabase {
     static let supabaseUrl = Bundle.main.object(forInfoDictionaryKey: "SUPABASE_URL") as? String ?? ""
     static let supabaseKey = Bundle.main.object(forInfoDictionaryKey: "SUPABASE_KEY") as? String ?? ""
 }

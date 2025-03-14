@@ -29,8 +29,8 @@ enum Configuration {
     }
 }
 
-enum API {
-    static var baseURL: URL {
-        return try! URL(string: "https://" + Configuration.value(for: "API_BASE_URL"))!
-    }
-}
+//enum API {
+  //  static var baseURL: URL {
+    //    return try! URL(string: "https://" + Configuration.value(for: "API_BASE_URL"))!
+    //}
+//}

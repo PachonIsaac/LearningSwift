@@ -7,10 +7,9 @@
 import Foundation
 import Supabase
 
-let SupabaseKey: String = try Configuration.value(for: "supabaseKey")
 
-let client = SupabaseClient(
-    supabaseURL: URL(string: "")!,
-    supabaseKey: SupabaseKey
+let supabase = SupabaseClient(
+    supabaseURL: URL(string: "https://buyvwbxhgakyjynjvxku.supabase.co")!,
+    supabaseKey: CredentialsSupabase.supabaseKey
 )
 

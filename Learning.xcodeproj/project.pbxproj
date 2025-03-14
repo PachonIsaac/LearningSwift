@@ -11,7 +11,8 @@
 		96228A6F2D64C0F7003E3242 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96228A6E2D64C0F7003E3242 /* WelcomeView.swift */; };
 		96228A712D64C0F9003E3242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96228A702D64C0F9003E3242 /* Assets.xcassets */; };
 		96228A752D64C0F9003E3242 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96228A742D64C0F9003E3242 /* Preview Assets.xcassets */; };
-		966DEBEE2D7755D3004D1B7F /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DEBED2D7755D3004D1B7F /* UserCredentials.swift */; };
+		96512C022D830FDA0094F006 /* CredentialsSupabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96512C012D830FDA0094F006 /* CredentialsSupabase.swift */; };
+		966DEBEE2D7755D3004D1B7F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DEBED2D7755D3004D1B7F /* UserModel.swift */; };
 		966DEBF22D7757D4004D1B7F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966DEBF12D7757D4004D1B7F /* HomeView.swift */; };
 		96A1E7172D761841008A9BE8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A1E7162D761841008A9BE8 /* LoginView.swift */; };
 		96B205FD2D77404B00492979 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B205FC2D77404B00492979 /* AuthViewModel.swift */; };
@@ -34,7 +35,8 @@
 		96228A702D64C0F9003E3242 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96228A722D64C0F9003E3242 /* Learning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Learning.entitlements; sourceTree = "<group>"; };
 		96228A742D64C0F9003E3242 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		966DEBED2D7755D3004D1B7F /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
+		96512C012D830FDA0094F006 /* CredentialsSupabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsSupabase.swift; sourceTree = "<group>"; };
+		966DEBED2D7755D3004D1B7F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		966DEBF12D7757D4004D1B7F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		96A1E7162D761841008A9BE8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		96B205FC2D77404B00492979 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -108,7 +110,8 @@
 		96A10D862D72214A00B9624E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				966DEBED2D7755D3004D1B7F /* UserCredentials.swift */,
+				966DEBED2D7755D3004D1B7F /* UserModel.swift */,
+				96512C012D830FDA0094F006 /* CredentialsSupabase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96512C022D830FDA0094F006 /* CredentialsSupabase.swift in Sources */,
 				96B206032D7749A800492979 /* NavbarView.swift in Sources */,
 				96B205FD2D77404B00492979 /* AuthViewModel.swift in Sources */,
 				96A1E7172D761841008A9BE8 /* LoginView.swift in Sources */,
@@ -245,7 +249,7 @@
 				96BD64212D81EA2E00C85462 /* Supabase.swift in Sources */,
 				96228A6F2D64C0F7003E3242 /* WelcomeView.swift in Sources */,
 				96BD64252D81F2EB00C85462 /* Configuration.swift in Sources */,
-				966DEBEE2D7755D3004D1B7F /* UserCredentials.swift in Sources */,
+				966DEBEE2D7755D3004D1B7F /* UserModel.swift in Sources */,
 				96B206002D7745B400492979 /* SignUpView.swift in Sources */,
 				96228A6D2D64C0F7003E3242 /* KDSApp.swift in Sources */,
 			);

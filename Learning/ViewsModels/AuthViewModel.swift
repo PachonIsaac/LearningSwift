@@ -8,48 +8,35 @@
 import Foundation
 import Supabase
 
-class LoginViewModel: ObservableObject {
+class AuthViewModel: ObservableObject {
     @Published var isAuthenticated = false
     @Published var errorMessage: String? = nil
     @Published var userRole: String? = nil
     
-    private let client = SupabaseClient(
-        supabaseURL: URL(string: "https://buyvwbxhgakyjynjvxku.supabase.co")!,
-        supabaseKey: CredentialsSupabase.supabaseKey
-    )
-    
-    func login(email: String, password: String) async {
+    func login(name: String, password: String) async {
         do {
-            // Intentar iniciar sesión con Supabase Auth
-            let authResponse = try await client.auth.signIn(email: email, password: password)
             
-            // Obtener el usuario autenticado
-            guard let session = authResponse.session else {
-                DispatchQueue.main.async {
-                    self.errorMessage = "No se pudo obtener la sesión del usuario."
-                }
-                return
-            }
-            
-            // Buscar en la base de datos el usuario con ese correo
-            let users: [User] = try await client.database
+            // Buscar en la base de datos el usuario
+            let users: [User] = try await supabase
                 .from("USERS")
                 .select()
-                .eq("USER_MAIL", email)
+                .eq("USER_NAME", value: name)
+                .eq("USER_PASS", value: password)
                 .limit(1)
                 .execute()
-                .decoded()
-            
+                .value
+            print(users)
+            print(name, password)
             guard let user = users.first else {
                 DispatchQueue.main.async {
-                    self.errorMessage = "Usuario no encontrado en la base de datos."
+                    self.errorMessage = "Credenciales incorrectas."
                 }
                 return
             }
             
             // Guardamos el rol del usuario
             DispatchQueue.main.async {
-                self.userRole = user.role
+                self.userRole = user.USER_ROLE
                 self.isAuthenticated = true
             }
         } catch {

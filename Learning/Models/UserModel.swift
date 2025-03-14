@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct UserCredentials {
-    var username:String = ""
-    var password:String = ""
+struct User: Decodable {
+    let USER_ID: String //UUID en String
+    let USER_NAME: String
+    let USER_MAIL: String
+    let USER_ROLE: String
 }

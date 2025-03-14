@@ -4,12 +4,15 @@
 //
 //  Created by Isaac Pachon on 3/03/25.
 //
-
+import Foundation
 import SwiftUI
+import Supabase
 
 struct LoginView: View {
     @StateObject private var viewModel = AuthViewModel()
-    @Environment(\.dismiss) var dismiss
+    
+    @State private var name: String = ""
+    @State private var password: String = ""
     
     var body: some View {
         VStack {
@@ -20,38 +23,43 @@ struct LoginView: View {
                 .bold()
                 .font(.largeTitle)
             
-            TextField("Username", text: .constant(""))
+            TextField("Email", text: $name)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(.none)
+                .padding()
+            
+            
+            SecureField("Password", text: $password)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             
-            SecureField("Password", text: .constant(""))
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            Button("Login"){
-                viewModel.login(username: "admin", password: "admin")
-            }
-            .frame(maxWidth: .infinity)
-            .padding()
-            .background(.baseYellow)
-            .foregroundColor(.black)
-            .cornerRadius(10)
-            .padding()
-            
-            // Mensaje de error si falla el login
-            if let errorMessage = viewModel.errorMessage {
+            if let errorMessage = viewModel.errorMessage{
                 Text(errorMessage)
                     .foregroundColor(.red)
                     .padding()
             }
             
-            Spacer()
-        }
-        .navigationBarBackButtonHidden()
-        .onChange(of: viewModel.isAuthenticated) { isAuthenticated in
-            if isAuthenticated {
-                dismiss()  // Cierra la pantalla de login al autenticarse
+            Button(action: {
+                Task{
+                    await viewModel.login(name:name, password: password)
+                }
+            }){
+                Text("Login")
+                    .frame(maxWidth: .infinity)
+                    .bold()
+                    .padding()
+                    .background(.baseYellow)
+                    .foregroundColor(.black)
+                    .cornerRadius(10)
+                    
             }
+            .padding()
+            
+            
+            if viewModel.isAuthenticated {
+                HomeView()
+            }
+            Spacer()
         }
     }
 }
