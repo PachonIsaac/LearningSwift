@@ -25,8 +25,7 @@ class AuthViewModel: ObservableObject {
                 .limit(1)
                 .execute()
                 .value
-            print(users)
-            print(name, password)
+           
             guard let user = users.first else {
                 DispatchQueue.main.async {
                     self.errorMessage = "Credenciales incorrectas."

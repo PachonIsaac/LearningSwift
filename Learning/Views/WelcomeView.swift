@@ -23,6 +23,7 @@ struct WelcomeView: View {
                 
                 NavigationLink(destination: LoginView()
                     .navigationBarBackButtonHidden(true)
+                    
                 ){
                     Text("Login")
                         .bold()
@@ -33,6 +34,7 @@ struct WelcomeView: View {
                         .cornerRadius(24)
                         .shadow(radius: 16)
                 }.padding(8)
+                
                 
                 NavigationLink(destination: SignUpView()
                     .navigationBarBackButtonHidden(true)

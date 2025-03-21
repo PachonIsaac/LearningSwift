@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct NavbarView: View {
-
+struct Navbar: View {
+    
     var body: some View {
+        VStack{
+            Spacer()
             HStack {
                 Image(.logoKDS)
                     .resizable()
@@ -20,20 +22,22 @@ struct NavbarView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
-
+                
                 Spacer()
             }
-            .padding()
-            .frame(maxWidth: .infinity)
+        } .padding()
+            .frame(maxWidth: .infinity, maxHeight: 120)
             .background(.baseYellow)
-            .clipShape(RoundedCorner(radius: 24, corners: [.bottomLeft, .bottomRight]))   
-        }
+            .clipShape(RoundedCorner(radius: 24, corners: [.bottomLeft, .bottomRight]))
+            .ignoresSafeArea()
     }
+}
+
 
 struct RoundedCorner: Shape {
     var radius: CGFloat
     var corners: UIRectCorner
-
+    
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(
             roundedRect: rect,

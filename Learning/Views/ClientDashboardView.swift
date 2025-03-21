@@ -7,12 +7,8 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct ClientDashboardView: View {
     var body: some View {
-        Text("Home")
+        Text("Client Dashboard")
     }
-}
-
-#Preview {
-    HomeView()
 }
