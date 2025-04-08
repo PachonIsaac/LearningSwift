@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Navbar: View {
+    var showCart: Bool = false
     
     var body: some View {
         VStack{
@@ -23,7 +24,16 @@ struct Navbar: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                 
-                Spacer()
+                
+                if showCart {
+                    Spacer()
+                    Button(action: {
+                        
+                    }) {
+                        Image(systemName: "cart.fill")
+                    }
+                }
+                
             }
         } .padding()
             .frame(maxWidth: .infinity, maxHeight: 120)

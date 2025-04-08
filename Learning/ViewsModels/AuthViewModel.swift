@@ -13,10 +13,9 @@ class AuthViewModel: ObservableObject {
     @Published var errorMessage: String? = nil
     @Published var userRole: String? = nil
     
+    @MainActor
     func login(name: String, password: String) async {
         do {
-            
-            // Buscar en la base de datos el usuario
             let users: [User] = try await supabase
                 .from("USERS")
                 .select()
@@ -25,23 +24,17 @@ class AuthViewModel: ObservableObject {
                 .limit(1)
                 .execute()
                 .value
-           
+            
             guard let user = users.first else {
-                DispatchQueue.main.async {
-                    self.errorMessage = "Credenciales incorrectas."
-                }
+                self.errorMessage = "Credenciales incorrectas."
                 return
             }
-            
-            // Guardamos el rol del usuario
-            DispatchQueue.main.async {
-                self.userRole = user.USER_ROLE
-                self.isAuthenticated = true
-            }
+
+            self.userRole = user.USER_ROLE
+            self.isAuthenticated = true
+
         } catch {
-            DispatchQueue.main.async {
-                self.errorMessage = "Error de autenticación: \(error.localizedDescription)"
-            }
+            self.errorMessage = "Error de autenticación: \(error.localizedDescription)"
         }
     }
 }

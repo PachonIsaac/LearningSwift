@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var viewModel = AuthViewModel()
+    @EnvironmentObject var viewModel: AuthViewModel
     
     @State private var name: String = ""
     @State private var password: String = ""
@@ -10,7 +10,7 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Navbar()
+                Navbar(showCart: viewModel.isAuthenticated)
                 Spacer()
                 
                 Text("Welcome")
@@ -67,13 +67,17 @@ struct LoginView: View {
             switch role {
             case "admin":
                 AdminDashboardView()
-                //.navigationBarBackButtonHidden()
+                .navigationBarBackButtonHidden()
             case "client":
                 ClientDashboardView()
-                //.navigationBarBackButtonHidden()
+                .navigationBarBackButtonHidden()
             default:
                 Text("Rol desconocido")
             }
         }
     }
+}
+
+#Preview {
+    LoginView()
 }
