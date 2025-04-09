@@ -11,6 +11,18 @@ import SwiftUI
 struct KDSApp: App {
     @StateObject private var authViewModel = AuthViewModel()
     
+    init() {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor(Color.baseYellow)
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            UINavigationBar.appearance().compactAppearance = appearance
+        }
+    
     var body: some Scene {
         WindowGroup {
             WelcomeView()

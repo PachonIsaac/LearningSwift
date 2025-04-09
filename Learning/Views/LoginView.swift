@@ -10,7 +10,6 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Navbar(showCart: viewModel.isAuthenticated)
                 Spacer()
                 
                 Text("Welcome")
@@ -51,10 +50,11 @@ struct LoginView: View {
                         .animation(.easeInOut, value: 8)
                         .padding(.bottom, 20)
                 }
-                
                 Spacer()
             }
-            
+            .toolbar {
+                CustomToolbarContent(showCart: viewModel.isAuthenticated)
+            }
             .navigationDestination(isPresented: $viewModel.isAuthenticated) {
                 destinationView()
             }
@@ -67,10 +67,10 @@ struct LoginView: View {
             switch role {
             case "admin":
                 AdminDashboardView()
-                .navigationBarBackButtonHidden()
+                    .navigationBarBackButtonHidden()
             case "client":
                 ClientDashboardView()
-                .navigationBarBackButtonHidden()
+                    .navigationBarBackButtonHidden()
             default:
                 Text("Rol desconocido")
             }

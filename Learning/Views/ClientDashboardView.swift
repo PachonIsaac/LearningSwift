@@ -12,36 +12,34 @@ struct ClientDashboardView: View {
     @StateObject var categoryVM = CategoryViewModel()
     
     var body: some View {
-        VStack {
-            Navbar(showCart: viewModel.isAuthenticated)
-            
-            Text("Categorías")
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .font(.title3)
-                .bold()
-                .padding(.leading)
+        NavigationStack {
+            VStack(alignment: .leading) {
+                Text("Categorías")
+                    .font(.title3)
+                    .bold()
+                    .padding(.leading)
+                    .padding(.top)
                 
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(categoryVM.categories) { category in
-                        Button(action: {
-                            // Acción al tocar categoría
-                        }) {
-                            CategoryItem(category: category)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(categoryVM.categories) { category in
+                            Button(action: {}) {
+                                CategoryItem(category: category)
+                            }
                         }
                     }
                 }
-                .padding(.horizontal)
+                Spacer()
             }
-            
-            Spacer()
-        }
-        .onAppear {
-            Task {
-                await categoryVM.fetchCategories()
+            .navigationTitle("")
+            .toolbar {
+                CustomToolbarContent(showCart: viewModel.isAuthenticated)
+            }
+            .onAppear {
+                Task {
+                    await categoryVM.fetchCategories()
+                }
             }
         }
     }
 }
-
