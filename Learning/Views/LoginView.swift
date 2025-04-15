@@ -10,6 +10,7 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                CustomAppBar(showCart: false)
                 Spacer()
                 
                 Text("Welcome")
@@ -17,13 +18,25 @@ struct LoginView: View {
                     .font(.largeTitle)
                 
                 TextField("Email", text: $name)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocapitalization(.none)
-                    .padding()
+                    .padding(.vertical, 10)
+                    .padding(.horizontal)
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                    )
+                    .padding(.horizontal)
                 
                 SecureField("Password", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                    .padding(.vertical, 10)
+                    .padding(.horizontal)
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+                    )
+                    .padding(.horizontal)
                 
                 Button(action: {
                     Task {
@@ -52,9 +65,7 @@ struct LoginView: View {
                 }
                 Spacer()
             }
-            .toolbar {
-                CustomToolbarContent(showCart: viewModel.isAuthenticated)
-            }
+            
             .navigationDestination(isPresented: $viewModel.isAuthenticated) {
                 destinationView()
             }
@@ -76,8 +87,4 @@ struct LoginView: View {
             }
         }
     }
-}
-
-#Preview {
-    LoginView()
 }

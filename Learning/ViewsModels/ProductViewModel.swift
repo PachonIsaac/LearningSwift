@@ -1,26 +1,26 @@
 //
-//  CategoryViewModel.swift
+//  ProductViewModel.swift
 //  Learning
 //
-//  Created by Isaac Pachon on 8/04/25.
+//  Created by Isaac Pachon on 15/04/25.
 //
 
 import Foundation
 
-class CategoryViewModel: ObservableObject {
-    @Published var categories: [Category] = []
+class ProductViewModel: ObservableObject {
+    @Published var products: [Product] = []
     @Published var errorMessage: String? = nil
     
-    func fetchCategories() async {
+    func fetchProducts() async {
         do {
-            let data: [Category] = try await supabase
-                .from("CATEGORIES")
+            let data: [Product] = try await supabase
+                .from("PRODUCTS")
                 .select()
                 .execute()
                 .value
             
             DispatchQueue.main.async {
-                self.categories = data
+                self.products = data
             }
         } catch {
             DispatchQueue.main.async {
