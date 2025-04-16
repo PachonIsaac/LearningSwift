@@ -51,7 +51,7 @@ struct ProductCard: View {
             
             // Descripción breve
             Text(product.PROD_DESC)
-                .font(.subheadline)
+                .font(.footnote)
                 .foregroundColor(.secondary)
                 .lineLimit(1)
             
@@ -65,6 +65,6 @@ struct ProductCard: View {
         .padding(.horizontal)
         .background(Color(.systemBackground))
         .cornerRadius(16)
-        .shadow(color: .gray.opacity(0.2), radius: 5, x: 0, y: -4)
+        .shadow(color: .gray.opacity(0.2), radius: 5, x: 0, y: 0)
     }
 }

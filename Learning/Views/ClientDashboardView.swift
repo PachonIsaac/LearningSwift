@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ClientDashboardView: View {
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authVM: AuthViewModel
     @StateObject var categoryVM = CategoryViewModel()
-    @StateObject var productVM = ProductViewModel()
+    @StateObject private var productViewModel = ProductViewModel()
     
     var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading) {
-                
-                CustomAppBar(showCart: viewModel.isAuthenticated)
+        
+        CustomAppBar(showCart: authVM.isAuthenticated)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
                 
                 Text("Categorías")
                     .font(.title3)
@@ -34,27 +34,33 @@ struct ClientDashboardView: View {
                         }
                     }
                 }
-                
-                //For de los productos.
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(productVM.products) { product in
-                            Button(action: {}) {
-                                ProductCard(product: product)
+
+                ForEach(productViewModel.categories) { category in
+                    VStack(alignment: .leading) {
+                        Text(category.CATE_NAME)
+                            .font(.title3)
+                            .bold()
+                            .padding(.horizontal)
+
+                        if let products = productViewModel.groupedProducts[category.CATE_ID] {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 16) {
+                                    ForEach(products) { product in
+                                        ProductCard(product: product)
+                                    }
+                                }
+                                .frame(height: 220)
+                                .padding(.horizontal)
                             }
                         }
-                    }.frame(maxHeight: 220)
-                        .padding(.horizontal)
+                    }
                 }
-                
-                Spacer()
-                
             }
-            .onAppear {
-                Task {
-                    await categoryVM.fetchCategories()
-                    await productVM.fetchProducts()
-                }
+        }
+        .onAppear {
+            Task {
+                await categoryVM.fetchCategories()
+                await productViewModel.fetchData()
             }
         }
     }

@@ -6,26 +6,34 @@
 //
 
 import Foundation
+import Supabase
 
+@MainActor
 class ProductViewModel: ObservableObject {
-    @Published var products: [Product] = []
-    @Published var errorMessage: String? = nil
+    @Published var categories: [Category] = []
+    @Published var groupedProducts: [Int: [Product]] = [:] // key = CATE_ID
     
-    func fetchProducts() async {
+    func fetchData() async {
         do {
-            let data: [Product] = try await supabase
+            async let fetchedCategories: [Category] = supabase
+                .from("CATEGORIES")
+                .select()
+                .execute()
+                .value
+
+            async let fetchedProducts: [Product] = supabase
                 .from("PRODUCTS")
                 .select()
                 .execute()
                 .value
-            
-            DispatchQueue.main.async {
-                self.products = data
-            }
+
+            categories = try await fetchedCategories
+            let products = try await fetchedProducts
+            groupedProducts = Dictionary(grouping: products) { $0.CATE_ID }
+
         } catch {
-            DispatchQueue.main.async {
-                self.errorMessage = "Error al cargar categorías: \(error.localizedDescription)"
-            }
+            print("Error al obtener datos: \(error)")
         }
     }
 }
+
