@@ -37,4 +37,7 @@ class AuthViewModel: ObservableObject {
             self.errorMessage = "Error de autenticación: \(error.localizedDescription)"
         }
     }
+    
+    //Sign Up
+    
 }

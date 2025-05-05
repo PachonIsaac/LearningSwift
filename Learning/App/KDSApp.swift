@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct KDSApp: App {
     @StateObject private var authViewModel = AuthViewModel()
+    @StateObject private var coordinator = NavigationCoordinator()
     
     init() {
             let appearance = UINavigationBarAppearance()
@@ -25,8 +26,14 @@ struct KDSApp: App {
     
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
-                .environmentObject(authViewModel)
+            NavigationStack(path: $coordinator.path) {
+                WelcomeView()
+                    .navigationDestination(for: AppRoute.self) { route in
+                        NavigationRouter(route: route)
+                    }
+            }
+            .environmentObject(authViewModel)
+            .environmentObject(coordinator)
         }
     }
 }

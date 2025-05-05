@@ -44,8 +44,8 @@ struct ProductCard: View {
             
             // Nombre del producto
             Text(product.PROD_NAME)
-                .font(.title3)
-                .fontWeight(.bold)
+                .font(.subheadline)
+                .fontWeight(.semibold)
                 .foregroundColor(.black)
                 .lineLimit(1)
             
@@ -57,8 +57,8 @@ struct ProductCard: View {
             
             // Precio
             Text("$\(String(format: "%.0f", product.PROD_PRICE))")
-                .font(.headline)
-                .fontWeight(.bold)
+                .font(.subheadline)
+                .fontWeight(.semibold)
                 .foregroundColor(.black)
         }
         .frame(maxWidth: 150, maxHeight: 200)

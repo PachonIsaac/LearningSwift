@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Product: Decodable, Identifiable {
+struct Product: Decodable, Identifiable, Hashable {
     let PROD_ID: Int
     let PROD_NAME: String
     let PROD_DESC: String

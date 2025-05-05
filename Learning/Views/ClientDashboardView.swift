@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ClientDashboardView: View {
     @EnvironmentObject var authVM: AuthViewModel
+    @EnvironmentObject var coordinator: NavigationCoordinator
     @StateObject var categoryVM = CategoryViewModel()
-    @StateObject private var productViewModel = ProductViewModel()
+    @StateObject private var productVM = ProductViewModel()
     
     var body: some View {
         
@@ -35,18 +36,23 @@ struct ClientDashboardView: View {
                     }
                 }
 
-                ForEach(productViewModel.categories) { category in
+                ForEach(productVM.categories) { category in
                     VStack(alignment: .leading) {
                         Text(category.CATE_NAME)
-                            .font(.title3)
-                            .bold()
+                            .font(.title2)
+                            .fontWeight(.bold)
                             .padding(.horizontal)
 
-                        if let products = productViewModel.groupedProducts[category.CATE_ID] {
+                        if let products = productVM.groupedProducts[category.CATE_ID] {
+                            //For de los productos
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 16) {
                                     ForEach(products) { product in
-                                        ProductCard(product: product)
+                                        Button(action: {
+                                            coordinator.goTo(.productDetails(product))
+                                        }) {
+                                            ProductCard(product: product)
+                                        }
                                     }
                                 }
                                 .frame(height: 220)
@@ -60,7 +66,7 @@ struct ClientDashboardView: View {
         .onAppear {
             Task {
                 await categoryVM.fetchCategories()
-                await productViewModel.fetchData()
+                await productVM.fetchData()
             }
         }
     }
