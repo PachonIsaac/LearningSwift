@@ -41,6 +41,9 @@ struct NavigationRouter: View {
             
         case .kitchen:
             KitchenDashboardView()
+            
+        case .orderDetail(let orderID):
+            OrderDetailView(orderID: orderID)
                 
         }
     }

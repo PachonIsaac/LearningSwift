@@ -34,11 +34,17 @@ class KitchenViewModel: ObservableObject {
         }
     }
 
-    func updateOrderStatus(orderID: Int, newStatus: String) async throws {
-        try await supabase
-            .from("ORDERS")
-            .update(["ORDE_STAT": newStatus])
-            .eq("ORDE_ID", value: orderID)
-            .execute()
-    }
+    func updateOrderStatus(orderID: Int, to newStatus: String) async {
+            do {
+                try await supabase
+                    .from("ORDERS")
+                    .update(["ORDE_STAT": newStatus])
+                    .eq("ORDE_ID", value: orderID)
+                    .execute()
+                
+                await fetchOrders() // Refrescar lista
+            } catch {
+                print("Error actualizando estado: \(error)")
+            }
+        }
 }

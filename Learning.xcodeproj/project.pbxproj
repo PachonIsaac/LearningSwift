@@ -29,8 +29,10 @@
 		96944C872DE0059900D5A298 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C862DE0059900D5A298 /* CartViewModel.swift */; };
 		96944C892DE0066500D5A298 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C882DE0066000D5A298 /* CartView.swift */; };
 		96944C8C2DE0120F00D5A298 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C8B2DE0120900D5A298 /* OrderModel.swift */; };
-		96944C8E2DE01CAE00D5A298 /* KitchenOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C8D2DE01CAA00D5A298 /* KitchenOrdersViewModel.swift */; };
+		96944C8E2DE01CAE00D5A298 /* KitchenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C8D2DE01CAA00D5A298 /* KitchenViewModel.swift */; };
 		96944C902DE01DA800D5A298 /* KitchenDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C8F2DE01D9B00D5A298 /* KitchenDashboardView.swift */; };
+		96944C922DE024B600D5A298 /* OrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C912DE024B600D5A298 /* OrderDetailView.swift */; };
+		96944C942DE024E800D5A298 /* OrderDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C932DE024DA00D5A298 /* OrderDetailViewModel.swift */; };
 		96A1E7172D761841008A9BE8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A1E7162D761841008A9BE8 /* LoginView.swift */; };
 		96B0B6382DAD6C2200998A07 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0B6372DAD6C2200998A07 /* ProductModel.swift */; };
 		96B0B63A2DAD749900998A07 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0B6392DAD749900998A07 /* ProductCard.swift */; };
@@ -72,8 +74,10 @@
 		96944C882DE0066000D5A298 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		96944C8A2DE00A9700D5A298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		96944C8B2DE0120900D5A298 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
-		96944C8D2DE01CAA00D5A298 /* KitchenOrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenOrdersViewModel.swift; sourceTree = "<group>"; };
+		96944C8D2DE01CAA00D5A298 /* KitchenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenViewModel.swift; sourceTree = "<group>"; };
 		96944C8F2DE01D9B00D5A298 /* KitchenDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenDashboardView.swift; sourceTree = "<group>"; };
+		96944C912DE024B600D5A298 /* OrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailView.swift; sourceTree = "<group>"; };
+		96944C932DE024DA00D5A298 /* OrderDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewModel.swift; sourceTree = "<group>"; };
 		96A1E7162D761841008A9BE8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		96B0B6372DAD6C2200998A07 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		96B0B6392DAD749900998A07 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				96228A6E2D64C0F7003E3242 /* WelcomeView.swift */,
 				96A1E7162D761841008A9BE8 /* LoginView.swift */,
 				96B205FF2D7745B400492979 /* SignUpView.swift */,
+				96944C912DE024B600D5A298 /* OrderDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,7 +190,8 @@
 		96A10D882D72215C00B9624E /* ViewsModels */ = {
 			isa = PBXGroup;
 			children = (
-				96944C8D2DE01CAA00D5A298 /* KitchenOrdersViewModel.swift */,
+				96944C932DE024DA00D5A298 /* OrderDetailViewModel.swift */,
+				96944C8D2DE01CAA00D5A298 /* KitchenViewModel.swift */,
 				961EFB7E2DCBFD1F00DDB444 /* SignUpViewModel.swift */,
 				966EEF652DA816EF00254FFC /* CategoryViewModel.swift */,
 				96B205FC2D77404B00492979 /* AuthViewModel.swift */,
@@ -307,6 +313,7 @@
 				96944C8C2DE0120F00D5A298 /* OrderModel.swift in Sources */,
 				96B205FD2D77404B00492979 /* AuthViewModel.swift in Sources */,
 				96944C892DE0066500D5A298 /* CartView.swift in Sources */,
+				96944C942DE024E800D5A298 /* OrderDetailViewModel.swift in Sources */,
 				96A1E7172D761841008A9BE8 /* LoginView.swift in Sources */,
 				96BD64212D81EA2E00C85462 /* Supabase.swift in Sources */,
 				96228A6F2D64C0F7003E3242 /* WelcomeView.swift in Sources */,
@@ -317,6 +324,7 @@
 				961EFB7D2DCBFCED00DDB444 /* AppRoute.swift in Sources */,
 				966EEF642DA816DC00254FFC /* CategoryItem.swift in Sources */,
 				96944C852DE004F100D5A298 /* CartModel.swift in Sources */,
+				96944C922DE024B600D5A298 /* OrderDetailView.swift in Sources */,
 				96BD64252D81F2EB00C85462 /* Configuration.swift in Sources */,
 				966EEF662DA816EF00254FFC /* CategoryViewModel.swift in Sources */,
 				966DEBEE2D7755D3004D1B7F /* UserModel.swift in Sources */,
@@ -324,7 +332,7 @@
 				96B0B63A2DAD749900998A07 /* ProductCard.swift in Sources */,
 				96944C872DE0059900D5A298 /* CartViewModel.swift in Sources */,
 				96228A6D2D64C0F7003E3242 /* KDSApp.swift in Sources */,
-				96944C8E2DE01CAE00D5A298 /* KitchenOrdersViewModel.swift in Sources */,
+				96944C8E2DE01CAE00D5A298 /* KitchenViewModel.swift in Sources */,
 				966EEF6C2DA8173300254FFC /* CategoryModel.swift in Sources */,
 				968EA6A72DAE9B7A0031D1A8 /* CustomAppbar.swift in Sources */,
 				968EA6A92DAEA7D00031D1A8 /* ProductViewModel.swift in Sources */,

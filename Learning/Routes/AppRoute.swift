@@ -16,4 +16,6 @@ enum AppRoute: Hashable{
     case productDetails(Product)
     case cart
     case kitchen
+    case orderDetail(orderID: Int)
+
 }

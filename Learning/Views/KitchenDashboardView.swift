@@ -8,39 +8,79 @@
 import SwiftUI
 
 struct KitchenDashboardView: View {
-    @StateObject private var vm = KitchenViewModel()
-
+    @EnvironmentObject var coordinator: NavigationCoordinator
+    @StateObject private var viewModel = KitchenViewModel()
+    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(vm.orders) { order in
-                    VStack(alignment: .leading) {
-                        Text("Pedido #\(order.ORDE_ID ?? 0)")
-                            .font(.headline)
-                        Text("Estado: \(order.ORDE_STAT)")
-                        Text("Fecha: \(order.ORDE_DATE)")
-                    }
-                    .contextMenu {
-                        Button("Marcar como en progreso") {
-                            Task {
-                                try? await vm.updateOrderStatus(orderID: order.ORDE_ID ?? 0, newStatus: "in progress")
-                                await vm.fetchOrders()
-                            }
+        ScrollView {
+            LazyVStack(spacing: 16) {
+                ForEach(viewModel.orders) { order in
+                    OrderCardView(order: order) { newStatus in
+                        Task {
+                            await viewModel.updateOrderStatus(orderID: order.ORDE_ID, to: newStatus)
                         }
-                        Button("Marcar como listo") {
-                            Task {
-                                try? await vm.updateOrderStatus(orderID: order.ORDE_ID ?? 0, newStatus: "ready")
-                                await vm.fetchOrders()
-                            }
-                        }
+                    } onDetail: {
+                        coordinator.goTo(.orderDetail(orderID: order.ORDE_ID))
                     }
                 }
             }
-            .navigationTitle("Pedidos Cocina")
-            .task {
-                await vm.fetchOrders()
-            }
+            .padding()
+        }
+        .task {
+            await viewModel.fetchOrders()
         }
     }
 }
 
+
+struct OrderCardView: View {
+    let order: Order
+    var onStatusChange: (String) -> Void
+    var onDetail: () -> Void
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Text("Pedido #\(order.ORDE_ID)")
+                    .font(.headline)
+                Spacer()
+                Text(order.ORDE_STAT.capitalized)
+                    .font(.caption)
+                    .padding(6)
+                    .background(statusColor(order.ORDE_STAT))
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
+            }
+
+            Text("Usuario: \(order.USER_ID)")
+                .font(.subheadline)
+            Text("Total: $\(order.ORDE_TOTA, specifier: "%.2f")")
+                .font(.subheadline)
+
+            Picker("Estado", selection: .init(
+                get: { order.ORDE_STAT },
+                set: { newStatus in onStatusChange(newStatus) }
+            )) {
+                Text("Pending").tag("pending")
+                Text("Preparing").tag("preparing")
+                Text("Ready").tag("ready")
+            }
+            .pickerStyle(.segmented)
+
+            Button("Ver Detalles", action: onDetail)
+                .padding(.top, 4)
+        }
+        .padding()
+        .background(.gray.opacity(0.1))
+        .cornerRadius(12)
+    }
+
+    private func statusColor(_ status: String) -> Color {
+        switch status {
+        case "pending": return .red
+        case "preparing": return .yellow
+        case "ready": return .green
+        default: return .gray
+        }
+    }
+}
