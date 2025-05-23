@@ -14,4 +14,6 @@ enum AppRoute: Hashable{
     case login
     case signUp
     case productDetails(Product)
+    case cart
+    case kitchen
 }

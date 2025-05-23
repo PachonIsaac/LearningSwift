@@ -11,6 +11,7 @@ import SwiftUI
 struct KDSApp: App {
     @StateObject private var authViewModel = AuthViewModel()
     @StateObject private var coordinator = NavigationCoordinator()
+    @StateObject var cartViewModel = CartViewModel()
     
     init() {
             let appearance = UINavigationBarAppearance()
@@ -34,6 +35,7 @@ struct KDSApp: App {
             }
             .environmentObject(authViewModel)
             .environmentObject(coordinator)
+            .environmentObject(cartViewModel)
         }
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CustomAppBar: View {
+    @EnvironmentObject var coordinator: NavigationCoordinator
+    
     var showCart: Bool = false
     
     var body: some View {
@@ -29,7 +31,9 @@ struct CustomAppBar: View {
                 Spacer()
                 
                 if showCart {
-                    Button(action: {}) {
+                    Button(action: {
+                        coordinator.goTo(.cart)
+                    }) {
                         Image(systemName: "cart.fill")
                             .resizable()
                             .foregroundColor(.white)

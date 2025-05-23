@@ -12,6 +12,8 @@ class AuthViewModel: ObservableObject {
     @Published var isAuthenticated = false
     @Published var errorMessage: String? = nil
     @Published var userRole: String? = nil
+    @Published var userID: String?
+
     
     @MainActor
     func login(name: String, password: String) async {
@@ -30,6 +32,7 @@ class AuthViewModel: ObservableObject {
                 return
             }
 
+            self.userID = user.USER_ID
             self.userRole = user.USER_ROLE
             self.isAuthenticated = true
 

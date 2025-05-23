@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		961EFB7B2DCBFCED00DDB444 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961EFB782DCBFCED00DDB444 /* NavigationCoordinator.swift */; };
+		961EFB7C2DCBFCED00DDB444 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961EFB792DCBFCED00DDB444 /* NavigationRouter.swift */; };
+		961EFB7D2DCBFCED00DDB444 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961EFB772DCBFCED00DDB444 /* AppRoute.swift */; };
+		961EFB7F2DCBFD1F00DDB444 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961EFB7E2DCBFD1F00DDB444 /* SignUpViewModel.swift */; };
+		961EFB812DCBFE2200DDB444 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961EFB802DCBFE2200DDB444 /* ProductDetailsView.swift */; };
 		96228A6D2D64C0F7003E3242 /* KDSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96228A6C2D64C0F7003E3242 /* KDSApp.swift */; };
 		96228A6F2D64C0F7003E3242 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96228A6E2D64C0F7003E3242 /* WelcomeView.swift */; };
 		96228A712D64C0F9003E3242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96228A702D64C0F9003E3242 /* Assets.xcassets */; };
@@ -20,6 +25,12 @@
 		966EEF6C2DA8173300254FFC /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966EEF6B2DA8173300254FFC /* CategoryModel.swift */; };
 		968EA6A72DAE9B7A0031D1A8 /* CustomAppbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968EA6A62DAE9B7A0031D1A8 /* CustomAppbar.swift */; };
 		968EA6A92DAEA7D00031D1A8 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968EA6A82DAEA7D00031D1A8 /* ProductViewModel.swift */; };
+		96944C852DE004F100D5A298 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C842DE004E800D5A298 /* CartModel.swift */; };
+		96944C872DE0059900D5A298 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C862DE0059900D5A298 /* CartViewModel.swift */; };
+		96944C892DE0066500D5A298 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C882DE0066000D5A298 /* CartView.swift */; };
+		96944C8C2DE0120F00D5A298 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C8B2DE0120900D5A298 /* OrderModel.swift */; };
+		96944C8E2DE01CAE00D5A298 /* KitchenOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C8D2DE01CAA00D5A298 /* KitchenOrdersViewModel.swift */; };
+		96944C902DE01DA800D5A298 /* KitchenDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96944C8F2DE01D9B00D5A298 /* KitchenDashboardView.swift */; };
 		96A1E7172D761841008A9BE8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A1E7162D761841008A9BE8 /* LoginView.swift */; };
 		96B0B6382DAD6C2200998A07 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0B6372DAD6C2200998A07 /* ProductModel.swift */; };
 		96B0B63A2DAD749900998A07 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0B6392DAD749900998A07 /* ProductCard.swift */; };
@@ -36,6 +47,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		961EFB772DCBFCED00DDB444 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
+		961EFB782DCBFCED00DDB444 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		961EFB792DCBFCED00DDB444 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		961EFB7E2DCBFD1F00DDB444 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		961EFB802DCBFE2200DDB444 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 		96228A692D64C0F7003E3242 /* Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96228A6C2D64C0F7003E3242 /* KDSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDSApp.swift; sourceTree = "<group>"; };
 		96228A6E2D64C0F7003E3242 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -51,6 +67,13 @@
 		966EEF6B2DA8173300254FFC /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		968EA6A62DAE9B7A0031D1A8 /* CustomAppbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAppbar.swift; sourceTree = "<group>"; };
 		968EA6A82DAEA7D00031D1A8 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		96944C842DE004E800D5A298 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		96944C862DE0059900D5A298 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		96944C882DE0066000D5A298 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		96944C8A2DE00A9700D5A298 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		96944C8B2DE0120900D5A298 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		96944C8D2DE01CAA00D5A298 /* KitchenOrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenOrdersViewModel.swift; sourceTree = "<group>"; };
+		96944C8F2DE01D9B00D5A298 /* KitchenDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenDashboardView.swift; sourceTree = "<group>"; };
 		96A1E7162D761841008A9BE8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		96B0B6372DAD6C2200998A07 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		96B0B6392DAD749900998A07 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
@@ -58,7 +81,6 @@
 		96B205FF2D7745B400492979 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		96BD64202D81EA2E00C85462 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
 		96BD64222D81F0DE00C85462 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		96BD64232D81F17E00C85462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		96BD64242D81F2EB00C85462 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +101,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		961EFB7A2DCBFCED00DDB444 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				961EFB772DCBFCED00DDB444 /* AppRoute.swift */,
+				961EFB782DCBFCED00DDB444 /* NavigationCoordinator.swift */,
+				961EFB792DCBFCED00DDB444 /* NavigationRouter.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
 		96228A602D64C0F7003E3242 = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +130,9 @@
 		96228A6B2D64C0F7003E3242 /* Learning */ = {
 			isa = PBXGroup;
 			children = (
+				96944C8A2DE00A9700D5A298 /* Info.plist */,
+				961EFB7A2DCBFCED00DDB444 /* Routes */,
 				96BD64262D81F58700C85462 /* Config */,
-				96BD64232D81F17E00C85462 /* Info.plist */,
 				96B206012D77498E00492979 /* Components */,
 				96A10D882D72215C00B9624E /* ViewsModels */,
 				96A10D872D72215400B9624E /* Views */,
@@ -124,6 +157,8 @@
 		96A10D862D72214A00B9624E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				96944C8B2DE0120900D5A298 /* OrderModel.swift */,
+				96944C842DE004E800D5A298 /* CartModel.swift */,
 				966EEF6B2DA8173300254FFC /* CategoryModel.swift */,
 				966DEBED2D7755D3004D1B7F /* UserModel.swift */,
 				96512C012D830FDA0094F006 /* CredentialsSupabase.swift */,
@@ -135,6 +170,9 @@
 		96A10D872D72215400B9624E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				96944C8F2DE01D9B00D5A298 /* KitchenDashboardView.swift */,
+				96944C882DE0066000D5A298 /* CartView.swift */,
+				961EFB802DCBFE2200DDB444 /* ProductDetailsView.swift */,
 				966EEF672DA8170C00254FFC /* AdminDashboardView.swift */,
 				966EEF682DA8170C00254FFC /* ClientDashboardView.swift */,
 				96228A6E2D64C0F7003E3242 /* WelcomeView.swift */,
@@ -147,9 +185,12 @@
 		96A10D882D72215C00B9624E /* ViewsModels */ = {
 			isa = PBXGroup;
 			children = (
+				96944C8D2DE01CAA00D5A298 /* KitchenOrdersViewModel.swift */,
+				961EFB7E2DCBFD1F00DDB444 /* SignUpViewModel.swift */,
 				966EEF652DA816EF00254FFC /* CategoryViewModel.swift */,
 				96B205FC2D77404B00492979 /* AuthViewModel.swift */,
 				968EA6A82DAEA7D00031D1A8 /* ProductViewModel.swift */,
+				96944C862DE0059900D5A298 /* CartViewModel.swift */,
 			);
 			path = ViewsModels;
 			sourceTree = "<group>";
@@ -217,7 +258,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					96228A682D64C0F7003E3242 = {
 						CreatedOnToolsVersion = 15.2;
@@ -263,22 +304,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				96512C022D830FDA0094F006 /* CredentialsSupabase.swift in Sources */,
+				96944C8C2DE0120F00D5A298 /* OrderModel.swift in Sources */,
 				96B205FD2D77404B00492979 /* AuthViewModel.swift in Sources */,
+				96944C892DE0066500D5A298 /* CartView.swift in Sources */,
 				96A1E7172D761841008A9BE8 /* LoginView.swift in Sources */,
 				96BD64212D81EA2E00C85462 /* Supabase.swift in Sources */,
 				96228A6F2D64C0F7003E3242 /* WelcomeView.swift in Sources */,
+				961EFB7B2DCBFCED00DDB444 /* NavigationCoordinator.swift in Sources */,
+				961EFB812DCBFE2200DDB444 /* ProductDetailsView.swift in Sources */,
+				961EFB7C2DCBFCED00DDB444 /* NavigationRouter.swift in Sources */,
+				96944C902DE01DA800D5A298 /* KitchenDashboardView.swift in Sources */,
+				961EFB7D2DCBFCED00DDB444 /* AppRoute.swift in Sources */,
 				966EEF642DA816DC00254FFC /* CategoryItem.swift in Sources */,
+				96944C852DE004F100D5A298 /* CartModel.swift in Sources */,
 				96BD64252D81F2EB00C85462 /* Configuration.swift in Sources */,
 				966EEF662DA816EF00254FFC /* CategoryViewModel.swift in Sources */,
 				966DEBEE2D7755D3004D1B7F /* UserModel.swift in Sources */,
 				96B206002D7745B400492979 /* SignUpView.swift in Sources */,
 				96B0B63A2DAD749900998A07 /* ProductCard.swift in Sources */,
+				96944C872DE0059900D5A298 /* CartViewModel.swift in Sources */,
 				96228A6D2D64C0F7003E3242 /* KDSApp.swift in Sources */,
+				96944C8E2DE01CAE00D5A298 /* KitchenOrdersViewModel.swift in Sources */,
 				966EEF6C2DA8173300254FFC /* CategoryModel.swift in Sources */,
 				968EA6A72DAE9B7A0031D1A8 /* CustomAppbar.swift in Sources */,
 				968EA6A92DAEA7D00031D1A8 /* ProductViewModel.swift in Sources */,
 				966EEF6A2DA8170C00254FFC /* ClientDashboardView.swift in Sources */,
 				966EEF692DA8170C00254FFC /* AdminDashboardView.swift in Sources */,
+				961EFB7F2DCBFD1F00DDB444 /* SignUpViewModel.swift in Sources */,
 				96B0B6382DAD6C2200998A07 /* ProductModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,7 +372,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 9SW4R7F684;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -381,7 +435,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 9SW4R7F684;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -409,8 +465,8 @@
 				CODE_SIGN_ENTITLEMENTS = Learning/Learning.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Learning/Preview Content\"";
-				DEVELOPMENT_TEAM = 9SW4R7F684;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -425,7 +481,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.7;
@@ -434,7 +490,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = isaacpachon.Learning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -450,8 +507,8 @@
 				CODE_SIGN_ENTITLEMENTS = Learning/Learning.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Learning/Preview Content\"";
-				DEVELOPMENT_TEAM = 9SW4R7F684;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -466,7 +523,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.7;
@@ -474,7 +531,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = isaacpachon.Learning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

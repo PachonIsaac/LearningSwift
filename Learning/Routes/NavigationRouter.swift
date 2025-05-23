@@ -36,6 +36,12 @@ struct NavigationRouter: View {
             ProductDetailsView(product: product)
                 //.navigationBarBackButtonHidden()
             
+        case .cart:
+            CartView()
+            
+        case .kitchen:
+            KitchenDashboardView()
+                
         }
     }
 }

@@ -13,8 +13,4 @@ struct User: Decodable {
     let USER_MAIL: String
     let USER_ROLE: String
     
-    //"clientId":"4ddde1bd-0c6f-4908",
-    //"clientSecret":"9119fa55-95c2-49df-8e3e-782efd045ce5"
-    //FirstToken
-    //SecondToken
 }

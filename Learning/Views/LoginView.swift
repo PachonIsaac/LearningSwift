@@ -48,6 +48,8 @@ struct LoginView: View {
                             coordinator.goTo(.adminDashboard)
                         case "client":
                             coordinator.goTo(.clientDashboard)
+                        case "chef":
+                            coordinator.goTo(.kitchen)
                         default:
                             print("Rol Desconocido")
                         }

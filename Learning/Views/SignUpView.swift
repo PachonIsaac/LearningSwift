@@ -29,7 +29,7 @@ struct SignUpView: View {
             
             TextField("Nombre de usuario", text: $viewModel.username)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .autocapitalization(.none)
+                .textInputAutocapitalization(.never)
                 .padding(.horizontal)
             
             Text("Correo electronico")
